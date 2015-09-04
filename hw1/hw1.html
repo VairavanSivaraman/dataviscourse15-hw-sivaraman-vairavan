@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<style>
+#example1 {
+    border: 10px ridge black;
+    background: Orange;
+    padding: 10px;
+}
+
+.container {
+  float: left;
+}
+
+.container1{
+  float: right;
+}
+
+h1{
+  text-align: center;
+  font-style: oblique;
+  `
+}
+#example2 {
+    border: 10px ridge black;
+    background: green;
+    padding: 10px;
+}
+#example3 {
+    border: 10px ridge black;
+    background: rgb(0, 102, 0);
+    padding: 10px;
+}
+
+#example4 {
+    border: 10px ridge black;
+    background: Maroon;
+    padding: 10px;
+}
+
+#example5 {
+    border: 10px ridge black;
+    background: rgb(0, 102, 255);
+    padding: 10px;
+    
+}
+#example6 {
+    border: 10px ridge black;
+    background: Violet;
+    padding: 10px;
+}
+
+.barchart rect {
+  fill: steelblue;
+  stroke: rgb(137,140,140);
+  stroke-width: 2px;
+}
+
+.scatter circle{
+   fill:Steelblue;
+}
+
+.scatter line{
+stroke: white;
+stroke-width: 3px;
+}
+
+.linechart polyline{
+  fill: green;
+  stroke: black;
+  stroke-width: 3px;
+}
+
+.area polygon{
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.area {
+ fill: steelblue;
+ fill-opacity: 0.85;  
+}
+
+#font{
+font-size:60%;
+}
+text{
+   fill: white
+}
+
+table, td, th {
+    border: 3px solid black;
+    color: white;
+}
+
+
+th,td {
+height: 23.5px;
+text-align: center;
+}
+
+
+
+svg{
+width: 420px;
+height: 320px;
+margin-left:15%;
+}
+
+svg.scatter{
+margin-left:30%;
+}
+
+
+table{
+ width: 380px;
+ margin-left:35%; 
+}
+
+
+</style>
+<div id ="example6">
+
+<h1> Assignment 0<br>Name: Vairavan Sivaraman<br>UID: u0942570</h1>
+</div>
+
+<div id="example5">
+<h1> Table </h1>
+<table>
+<thead>
+<tr>
+<th>x</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.0</td>
+<td>9.14</td>
+</tr>
+<tr>
+<td>8.0</td>
+<td>8.14</td>
+</tr>
+<tr>
+<td>13.0</td>
+<td>8.74</td>
+</tr>
+<tr>
+<td>9.0</td>
+<td>8.77</td>
+</tr>
+<tr>
+<td>11.0</td>
+<td>9.26</td>
+</tr>
+<tr>
+<td>14.0</td>
+<td>8.10</td>
+</tr>
+<tr>
+<td>6.0</td>
+<td>6.13</td>
+</tr>
+<tr>
+<td>4.0</td>
+<td>3.10</td>
+</tr>
+<tr>
+<td>12.0</td>
+<td>9.13</td>
+</tr>
+<tr>
+<td>7.0</td>
+<td>7.26</td>
+</tr>
+<tr>
+<td>5.0</td>
+<td>4.74</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id = "example1">
+<h1>Bar chart</h1> 
+<svg class="barchart" >
+    <rect x=20 y=120 width="20" height="200"></rect>
+    <text x="22" y="140"> 10 </text> 
+    <rect x=40 y=160 width="20" height="160"></rect>
+    <text x="46" y="180"> 8 </text>
+    <rect x=60 y=60 width="20" height="260"></rect>
+    <text x="62" y="80"> 13 </text>
+    <rect x=80 y=140 width="20" height="180"></rect>
+    <text x="86" y="160"> 9 </text>
+    <rect x=100 y=100 width="20" height="220"></rect>
+    <text x="102" y="120"> 11 </text>
+    <rect x=120 y=40 width="20" height="280"></rect>
+    <text x="122" y="60"> 14 </text>
+    <rect x=140 y=200 width="20" height="120"></rect>
+    <text x="146" y="220"> 6 </text>
+    <rect x=160 y=240 width="20" height="80"></rect>
+    <text x="166" y="260"> 4 </text>
+    <rect x=180 y=80 width="20" height="240"></rect>
+    <text x="182" y="100"> 12 </text>
+    <rect x=200 y=180 width="20" height="140"></rect>
+    <text x="206" y="200"> 7 </text>
+    <rect x=220 y=220 width="20" height="100"></rect> 
+    <text x="226" y="240"> 5 </text>
+</svg>
+
+
+
+<svg class="barchart" id="font" >
+    <rect x=0 y=137.2 width="20" height="182.8"></rect>
+    <rect x=20 y=157.2 width="20" height="162.8"></rect>
+    <rect x=40 y=145.2 width="20" height="174.8"></rect>
+    <rect x=60 y=144.6 width="20" height="175.4"></rect>
+    <rect x=80 y=134.8 width="20" height="185.2"></rect>
+    <rect x=100 y=158 width="20" height="162"></rect>
+    <rect x=120 y=197.4 width="20" height="122.6"></rect>
+    <rect x=140 y=258 width="20" height="62"></rect>
+    <rect x=160 y=137.4 width="20" height="182.6"></rect>
+    <rect x=180 y=174.8 width="20" height="145.2"></rect>
+    <rect x=200 y=225.2 width="20" height="94.8"></rect>
+    <text x="2" y="157.2"> 9.14 </text>
+    <text x="22" y="177.2"> 8.14 </text>
+    <text x="42" y="165.2"> 8.74 </text>
+    <text x="62" y="164.6"> 8.77 </text>
+    <text x="82" y="154.8"> 9.26 </text>
+    <text x="102" y="178"> 8.10 </text>
+    <text x="122" y="217.4"> 6.13 </text>
+    <text x="142" y="278"> 3.10 </text>
+    <text x="162" y="157.4"> 9.13 </text>
+    <text x="182" y="194.8"> 7.26 </text>
+    <text x="202" y="245.2"> 4.74 </text>
+</svg>
+</div>
+
+<div id="example2">
+<h1>Line chart</h1>
+<svg class ="linechart" >
+     <polyline points="20 120,40 160,60 60,80 140,100 100,120 40,140 200,160 240,180 80,200 180 "></polyline>
+    <text x="20" y="120"> 10 </text>
+    <text x="42" y="180"> 8 </text>
+    <text x="62" y="40"> 13 </text>
+    <text x="82" y="160"> 9 </text>
+    <text x="122" y="40"> 14 </text>
+    <text x="162" y="260"> 4 </text>
+    <text x="182" y="80"> 12 </text>
+    <text x="222" y="240"> 5 </text>
+     </svg>
+
+<svg class ="linechart" >
+     <polyline points="0 137.2,20 157.2, 40 145.2,60 144.6,80 134.8,100 158,120 197.4, 140 258, 160 137.4, 180 174.8, 200 225.2"></polyline>
+
+    <text x="2" y="117.2"> 9.14 </text>
+    <text x="22" y="177.2"> 8.14 </text>
+    <text x="82" y="114.8"> 9.26 </text>
+    <text x="142" y="278"> 3.10 </text>
+    <text x="162" y="117.4"> 9.13 </text>
+    <text x="202" y="205.2"> 4.74 </text>
+</svg>
+</div>
+
+<div id="example3">
+<h1>Area chart</h1>
+<svg class ="area" >
+
+     <polygon points="20 320,20 120,40 160,60 60,80 140,100 100,120 40,140 200,160 240,180 80,200 180,200 320"> </polygon>
+ <text x="20" y="120"> 10 </text>
+    <text x="62" y="40"> 13 </text>
+    <text x="122" y="40"> 14 </text>
+    <text x="182" y="80"> 12 </text>
+</svg>
+
+
+<svg class ="area" id="areas" >
+    <polygon points ="0 320,0 137.2,20 157.2, 40 145.2,60 144.6,80 134.8,100 158,120 197.4, 140 258, 160 137.4, 180 174.8, 200 225.2,200 320"></polygon>
+<text x="2" y="117.2"> 9.14 </text>
+    <text x="82" y="114.8"> 9.26 </text>
+    <text x="162" y="117.4"> 9.13 </text>
+</svg>
+</div>
+
+<div id="example4">
+<h1>Scatter chart</h1>
+<svg class ="scatter" >
+ <circle cx="120" cy="218" r="10"></circle>
+<circle cx="140" cy="185.2" r="10"></circle>
+<circle cx="160" cy="157.4" r="10"></circle>
+<circle cx="180" cy="134.8" r="10"></circle>
+<circle cx="200" cy="117.2" r="10"></circle>
+<circle cx="220" cy="104.6" r="10"></circle>
+<circle cx="240" cy="97.2"  r="10"></circle>
+<circle cx="260" cy="94.8" r="10"></circle>
+<circle cx="280" cy="97.4" r="10"></circle>
+<circle cx="300" cy="105.2" r="10"></circle>
+<circle cx="320" cy="118" r="10"></circle>
+<line x1="40" y1="280" x2="400" y2="280"></line>
+<line x1="40" y1="280" x2="40" y2="20"></line>
+<text x="60" y="300"> 1 </text>
+<text x="80" y="300"> 2 </text>
+<text x="100" y="300"> 3 </text>     
+<text x="120" y="300"> 4 </text>
+<text x="140" y="300"> 5 </text>
+<text x="160" y="300"> 6 </text>
+<text x="180" y="300"> 7 </text>
+<text x="200" y="300"> 8 </text>
+<text x="220" y="300"> 9 </text>
+<text x="238" y="300"> 10 </text>
+<text x="262" y="300"> 11 </text>
+<text x="282" y="300"> 12 </text>
+<text x="302" y="300"> 13 </text>
+<text x="322" y="300"> 14 </text>
+<text x="20" y="260"> 1 </text>
+<text x="20" y="240"> 2 </text>
+<text x="20" y="220"> 3 </text>
+<text x="20" y="200"> 4 </text>
+<text x="20" y="180"> 5 </text>
+<text x="20" y="160"> 6 </text>
+<text x="20" y="140"> 7 </text>
+<text x="20" y="120"> 8 </text>
+<text x="20" y="100"> 9 </text>
+<text x="18" y="80"> 10 </text>     
+     
+    
+</svg>
+
+</div>
+
+
