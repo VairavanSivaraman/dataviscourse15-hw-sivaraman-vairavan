@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 2 Solution</title>
+    <style>
+        .barChart {
+            fill: steelblue;
+            stroke: darkgray;
+            stroke-width: 1px;
+        }
+        
+
+        
+        polyline {
+            fill: white;
+ 			stroke: steelblue;
+  			stroke-width: 3px;
+        }
+
+        polygon {
+            stroke: steelblue;
+            stroke-width: 3px;
+            fill: steelblue;
+ 			fill-opacity: 0.85;
+        }
+
+        circle {
+            fill: steelblue;
+        }
+
+        .frame {
+            fill: none;
+            stroke: black;
+            stroke-width: 2px;
+        }
+
+        /* Styles that clean up the layout;
+         * you can ignore these */
+        div {
+            display: inline-block;
+            border: 1px solid lightgray;
+            margin: 1em;
+        }
+
+        div, span {
+            padding: 1em;
+        }
+        .tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}
+    </style>
+</head>
+<body>
+<script src="script.js" ></script>
+<script src="d3.min.js"></script>
+<h3>CS-5630 / CS-6630 Homework 2</h3>
+<span>Vairavan Sivaraman</span>
+<span>vairavan.sivaraman@utah.edu</span>
+<span>u0942570</span>
+
+<br/>
+<hr/>
+<br/>
+
+<span>
+    <button onclick="staircase()">Staircase</button>
+</span>
+
+<span>
+    <label>Dataset:</label>
+    <select id="dataset" onchange="changeData()">
+        <option value="anscombe_I">Anscombe's Quartet I</option>
+        <option selected value="anscombe_II">Anscombe's Quartet II</option>
+        <option value="anscombe_III">Anscombe's Quartet III</option>
+        <option value="anscombe_IV">Anscombe's Quartet IV</option>
+    </select>
+</span>
+<span>
+    <button onclick="randomSubset()">Random Subset</button>
+</span>
+
+<br/>
+
+<div class="barChart" >
+    <h2>Bar Charts</h2>
+    <svg width="280" height="320" id="unique">
+    <rect x=20 y=120 width="20" height="200" onmousemove=mousein(this) onmouseout=mouseout(this) ></rect>
+    <rect x=40 y=160 width="20" height="160" onmousemove=mousein(this) onmouseout=mouseout(this)></rect> 
+    <rect x=60 y=60 width="20" height="260" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=80 y=140 width="20" height="180" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=100 y=100 width="20" height="220" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=120 y=40 width="20" height="280" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=140 y=200 width="20" height="120" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=160 y=240 width="20" height="80" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=180 y=80 width="20" height="240" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=200 y=180 width="20" height="140" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=220 y=220 width="20" height="100" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    </svg>
+
+    <svg width="280" height="320" id="unique1">
+    <rect x=0 y=137.2 width="20" height="182.8" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=20 y=157.2 width="20" height="162.8" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=40 y=145.2 width="20" height="174.8" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=60 y=144.6 width="20" height="175.4" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=80 y=134.8 width="20" height="185.2" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=100 y=158 width="20" height="162" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=120 y=197.4 width="20" height="122.6" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=140 y=258 width="20" height="62" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=160 y=137.4 width="20" height="182.6" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=180 y=174.8 width="20" height="145.2" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    <rect x=200 y=225.2 width="20" height="94.8" onmousemove=mousein(this) onmouseout=mouseout(this)></rect>
+    </svg>
+</div>
+
+<div>
+    <h2>Line Charts</h2>
+
+    <svg width="280" height="320" id="unique2">
+        <polyline points="20 120,40 160,60 60,80 140,100 100,120 40,140 200,160 240,180 80,200 180 "></polyline>
+    </svg>
+
+    <svg width="280" height="320" id="unique3">
+         <polyline points="0 137.2,20 157.2, 40 145.2,60 144.6,80 134.8,100 158,120 197.4, 140 258, 160 137.4, 180 174.8, 200 225.2"></polyline>
+
+    </svg>
+</div>
+
+<div>
+    <h2>Area Charts</h2>
+
+    <svg width="280" height="320" id="unique4">
+        <polygon points="20 320,20 120,40 160,60 60,80 140,100 100,120 40,140 200,160 240,180 80,200 180,200 320"> </polygon>
+ </svg>
+ 
+    <svg width="280" height="320" id="unique5">
+        <polygon points ="0 320,0 137.2,20 157.2, 40 145.2,60 144.6,80 134.8,100 158,120 197.4, 140 258, 160 137.4, 180 174.8, 200 225.2,200 320"></polygon>
+
+    </svg>
+</div>
+
+<div>
+    <h2>Scatterplot</h2>
+
+    <svg width="560"  height="320" id="unique6">
+    <circle cx="120" cy="258" r="10"></circle>
+	<circle cx="140" cy="225.2" r="10"></circle>
+	<circle cx="160" cy="197.4" r="10"></circle>
+	<circle cx="180" cy="174.8" r="10"></circle>
+	<circle cx="200" cy="157.2" r="10"></circle>
+	<circle cx="220" cy="144.6" r="10"></circle>
+	<circle cx="240" cy="137.2"  r="10"></circle>
+	<circle cx="260" cy="134.8" r="10"></circle>
+	<circle cx="280" cy="137.4" r="10"></circle>
+	<circle cx="300" cy="145.2" r="10"></circle>
+	<circle cx="320" cy="158" r="10"></circle>
+    </svg>
+</div>
+</body>
+</html>
