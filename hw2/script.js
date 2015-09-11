@@ -28,7 +28,7 @@ function staircase() {
 	}
 	//console.log("Number of child is ="+i);
 	for ( j=0; j< i; j++){
-	string=string.concat('<rect x="' +(20*(j+1)) +'" y="'+ (height -(j*20))+'" width="20" height="'+ (j*20)+'"></rect>\n');
+	string=string.concat('<rect x="' +(20*(j+1)) +'" y="'+ (height -(j*20))+'" width="20" height="'+ (j*20)+'"onmousemove=mousein(this) onmouseout=mouseout(this)></rect>\n');
 	}
 	//console.log("The string is:"+string)
     Parent.innerHTML = string;
