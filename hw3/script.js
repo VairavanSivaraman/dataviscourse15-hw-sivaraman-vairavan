@@ -135,14 +135,15 @@ var node=d3.select('svg#graph').select('g#nodes').selectAll("path")
 }
 
 function updateBarChart() {
-      console.log(selectedSeries[0]);
+	console.log("enter");
+      //console.log(teamSchedules["Utah"]);
 	/*var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);	*/
     //Games=[];
     for(i=0;i<selectedSeries.length;i++){
     Games.push(selectedSeries[i]["_id"]);}
-    console.log(Games.length);
+   // console.log(Games.length);
     var svgBounds = document.getElementById("barChart").getBoundingClientRect(),
         xAxisSize = 100,
         yAxisSize = 60;
@@ -153,18 +154,27 @@ function updateBarChart() {
         	break;
         	}
         	}*/
-        	
+        	max=0;
         Min_attend = d3.min(selectedSeries, function (d) {
             return d.attendance;
         });
-        Max_Attend = d3.max(selectedSeries, function (d) {
-            return d.attendance;
+        Max_Attend = d3.max(d3.values(teamSchedules), function (d) {
+        	console.log(d);
+            for(i=0;i<d.length;i++){
+            	
+            		if( d[i].attendance > max){
+            			console.log("here");
+            			max = d[i].attendance
+            			}
+            		
+            }
+            return max;
         });
-        Tol = 2000;
+        Tol=0;
         
     // ******* TODO: PART I *******
     	 var yScale = d3.scale.linear()
-        .domain([Min_attend-Tol, Max_Attend+Tol])
+        .domain([0, Max_Attend])
         .range([svgBounds.height-xAxisSize,0]);
         
        
@@ -359,7 +369,7 @@ function updateForceDirectedGraph() {
         .attr("d", d3.svg.symbol()
         .type(function(d) { return d3.svg.symbolTypes[type(d.data_type)]; })
         .size(function(d){
-        	console.log(d);
+        	//console.log(d);
         	if(d.data_type == "Team"){
         				return 50;
         			}
