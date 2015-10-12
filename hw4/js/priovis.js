@@ -169,7 +169,7 @@ text.enter().append("text")
             }});
             
       text.attr({       "y": function (d) {
-            return self.yScale(d)+10;
+            return self.yScale(d)+2;
         }
         })
         .text(function(d) { return numberWithCommas(d.toFixed(2)); })
@@ -418,15 +418,11 @@ text.enter().append("text")
             }});
             
       text.attr({       "y": function (d) {
-      		console.log(self.graphH/(self.yScale(d)+10)+ " "+self.yScale(d)+10+ " "+ self.graphH/1.3);
-      		if(self.graphH/(self.yScale(d)+10) > 1.3){
-      			console.log("not here");
-            	return self.yScale(d)+10;
-            }
-            else{
-            	console.log("here"+ self.graphH/1.3);
-            	return self.grpahH/1.3;
-            }
+      		//console.log(self.graphH/(self.yScale(d)+10)+ " "+self.yScale(d)+10+ " "+ self.graphH/1.3);
+      		
+      			//console.log("not here");
+            	return self.yScale(d)+2;
+            
         }
         })
         .text(function(d) { return numberWithCommas(d.toFixed(2)); })
