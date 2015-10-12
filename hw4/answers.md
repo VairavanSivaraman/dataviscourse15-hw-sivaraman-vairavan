@@ -12,5 +12,6 @@
 
 
 ### Q2c:  What do the other DOM elements of brush represent?
-  
-
+    There two other dom element 
+    1.<g class ="resize e"> this constructs a thin rectangle for right side boundary
+    2.<g class ="resize w"> this constructs a thin rectangle for left side boundary

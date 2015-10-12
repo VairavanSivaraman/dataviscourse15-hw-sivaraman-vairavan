@@ -29,9 +29,23 @@
      var dataRange = document.getElementById('range previous').value
      if(dataRange == "Previous Range"){
     	prioVis1.onSelectionChange(temp_from_s,temp_to_s,0);
+    	document.getElementById('previous').innerHTML = "Previously selected range is From: "+temp_from_s+" To: "+temp_to_s;
+    }
+    else if(dataRange == "Overall")
+    {
+    	
+    	prioVis1.onSelectionChange(start,end,0);
+    	document.getElementById('previous').innerHTML = "Previously selected range is From: "+start+" To: "+end;
     }
     else if(dataRange == "Previous Range Average"){
     	prioVis1.onSelectionChange(temp_from_s,temp_to_s,1);
+    	document.getElementById('previous').innerHTML = "Previously selected range is From: "+temp_from_s+" To: "+temp_to_s;
+    }
+    else
+    {
+    	
+    	prioVis1.onSelectionChange(start,end,1);
+    	document.getElementById('previous').innerHTML = "Previously selected range is From: "+start+" To: "+end;
     }
 }
 
@@ -41,20 +55,24 @@ function changeData() {
      if(dataRange == "Selected Range"){
     	ageVis.onSelectionChange(from_s,to_s);
     	prioVis.onSelectionChange(from_s,to_s,0);
+    	document.getElementById('current').innerHTML = "Current selected range is From: "+from_s+" To: "+to_s;
     }
     else if(dataRange == "Overall")
     {
     	ageVis.onSelectionChange(start,end);
     	prioVis.onSelectionChange(start,end,0);
+    	document.getElementById('current').innerHTML = "Current selected range is From: "+start+" To: "+end;
     }
     else if(dataRange == "Selected Range Average"){
     	ageVis.onSelectionChange(from_s,to_s);
     	prioVis.onSelectionChange(from_s,to_s,1);
+    	document.getElementById('current').innerHTML = "Current selected range is From: "+from_s+" To: "+to_s;
     }
     else
     {
     	ageVis.onSelectionChange(start,end);
     	prioVis.onSelectionChange(start,end,1);
+    	document.getElementById('current').innerHTML = "Current selected range is From: "+start+" To: "+end;
     }
 }
 (function () {
