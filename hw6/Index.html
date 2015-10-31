@@ -1,0 +1,104 @@
+<html lang="en">
+
+<head>
+    <title>Homework 6</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        
+        /* Styles that clean up the layout;
+         * you can ignore these (though feel
+         * free to change them if you want to): */
+        h2 {
+            margin: 10px;
+        }
+        div.block,
+        span.header {
+            padding: 10px;
+        }
+        
+        div.block {
+            display: inline-block;
+            border: 1px solid lightgray;
+            margin: 10px;
+        }
+        #renderContainer {
+            position: relative;
+            width: 800px;
+            height: 400px;
+        }
+
+        #transferControls {
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+        .area {
+            fill: steelblue;
+        }
+        .brush .extent {
+            stroke: #000;
+            fill-opacity: .125;
+            shape-rendering: crispEdges;
+        }
+    </style>
+    <script src="lib/three.min.js"></script>
+    <script src="lib/stats.min.js"></script>
+    <script src="lib/Detector.js"></script>
+    <script src="lib/OrbitControls.js"></script>
+    <script src="lib/VolumeRenderer.js"></script>
+    <script src="lib/jscolor/jscolor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.19/topojson.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.js" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+
+<body>
+    <h3>CS-5630 / CS-6630 Homework 6</h3>
+    <span class="header">Vairavan Sivaraman</span>
+    <span class="header">vairavan.sivaraman@utah.edu</span>
+    <span class="header">u0942570</span>
+
+    <br/>
+    <hr/>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div id="renderContainer"></div>
+        </div>
+
+        <div id="transferControls" class="col-md-4">
+            <span class="header">
+                <select id="volumeMenu">
+                    <option>bonsai</option>
+                    <option>foot</option>
+                    <option>teapot</option>
+                </select>
+            </span>
+
+            <br/>
+
+            <code>******* Your solution here *******</code>
+            <div id="container">
+                BAR CHART:
+                <div>
+                    <svg id="histogram"><g></g></svg>
+                </div>
+                <b> Select Colors for the brushes</b>
+                <div>Brush one:&nbsp&nbsp <input class="color" value="4FFF9B" onchange="updateColor(this.value, 0)"/></div>
+                <div>Brush Two:&nbsp&nbsp <input class="color" value="FF4545" onchange="updateColor(this.value, 1)"/></div>
+                <div>Brush Three: <input class="color" value="4D52FF" onchange="updateColor(this.value, 2)"/></div>
+                <div><button onclick="clearBrushes()" style="Background-color:steelBlue">Remove Brushes!</button></div>
+                <br>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
